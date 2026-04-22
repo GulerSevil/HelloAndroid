@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Hello Android</string>
+    <string name="greeting">Hello, World!</string>
+    <string name="greeting_subtitle">Your demo Android app is running.</string>
+</resources>

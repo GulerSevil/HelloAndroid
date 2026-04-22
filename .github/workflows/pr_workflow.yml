@@ -1,0 +1,20 @@
+name: PR workflow
+
+on: 
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, edited]
+
+permissions:
+    pull-requests: write
+
+jobs:
+  check-pr-title-for-convention:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Check PR title follows Conventional Commits
+        uses: GulerSevil/conventional-commit-with-ticket@main
+        with:
+          app-token: ${{ secrets.GITHUB_TOKEN}}
+          
