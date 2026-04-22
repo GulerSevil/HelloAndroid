@@ -17,4 +17,4 @@ jobs:
         uses: GulerSevil/conventional-commit-with-ticket@main
         with:
           app-token: ${{ secrets.GITHUB_TOKEN}}
-          
+          ticket-key-pattern: "(PROJ|TEAM)-[0-9]{2,5}"
