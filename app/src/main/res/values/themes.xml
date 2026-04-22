@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme. The Compose theme handles the full UI; this
+         theme is applied by the system before Compose rendering begins. -->
+    <style name="Theme.HelloAndroid" parent="android:Theme.Material.Light.NoActionBar" />
+</resources>
