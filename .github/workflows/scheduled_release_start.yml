@@ -1,0 +1,33 @@
+name: Scheduled Release Start
+
+
+on:
+  schedule:
+    - cron: '0 0 * * 1' # Every Monday at 00:00
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  
+jobs:
+  release-start:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Start release
+        run: echo "Starting release"
+
+      - name: Release Please
+        uses: GulerSevil/release-please-autoship@main
+        with: 
+            target-branch: ${{ github.ref_name }}
+            release-please-config: .github/release-please/config.json
+            release-please-manifest: .github/release-please/manifest.json
+            github-app-id: ${{ secrets.DEMO_APP_ID }}
+            github-app-private-key: ${{ secrets.DEMO_PRIVATE_KEY }}
+
+
+    
