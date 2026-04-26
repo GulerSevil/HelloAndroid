@@ -1,0 +1,22 @@
+name: Release Please
+
+on:
+  schedule:
+    - cron: "0 9 * * 1" # Every Monday at 09:00 UTC
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Run Release Please and auto-merge
+        uses: DevExSweden/release-please-autoship@main
+        with:
+          target-branch: main
+          config-file: .github/release-please/config.json
+          manifest-file: .github/release-please/manifest.json
+          github-app-id: ${{ secrets.DEMO_APP_ID }}
+          github-app-private-key: ${{ secrets.DEMO_PRIVATE_KEY }}

@@ -13,7 +13,7 @@ jobs:
         uses: DevExSweden/conventional-commit-with-ticket@main
         with:
           app-token: ${{ secrets.GITHUB_TOKEN }}
-          ticket-key-pattern: "(PROJ|TEAM)-[0-9]{2,5}"
+          #ticket-key-pattern: "(PROJ|TEAM)-[0-9]{2,5}"
           require-ticket-for-types: "feat,fix,perf,security,refactor"
 
       - name: Continue workflow
