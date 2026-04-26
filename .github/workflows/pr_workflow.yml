@@ -1,0 +1,19 @@
+name: Conventional Commit Check
+
+on:
+  pull_request:
+    types: [opened, reopened, edited]
+
+jobs:
+  conventional-commit:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Validate conventional commits
+        uses: DevExSweden/conventional-commit-with-ticket@main
+        with:
+          app-token: ${{ secrets.APP_TOKEN }}
+
+      - name: Continue workflow
+        run: echo  "If the conventional commit check passes, the workflow will continue"
+        
